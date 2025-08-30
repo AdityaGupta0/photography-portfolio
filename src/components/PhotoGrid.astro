@@ -4,6 +4,9 @@ import '../styles/glightbox-custom.css';
 import { Image } from 'astro:assets';
 import type { Image as ImageType } from '../data/galleryData';
 
+import "@fancyapps/ui/dist/fancybox/fancybox.css";
+
+
 interface Props {
 	images: ImageType[];
 }
@@ -16,10 +19,14 @@ const { images } = Astro.props;
 		images.map((image) => (
 			<a
 				href={image.src.src}
-				class="photo-item glightbox absolute transition-transform hover:scale-[1.02] hover:z-10"
+				class="photo-item absolute transition-transform hover:scale-[1.02] hover:z-10"
 				data-gallery="gallery1"
 				data-type="image"
-				data-glightbox={image.description ? `title: ${image.description}` : undefined}
+				// data-glightbox={image.description ? `title: ${image.description}` : undefined}
+
+				style={'--width: ' + image.src.width + 'px; --height: ' + image.src.height + 'px;'}
+				target="_blank"
+				data-fancybox="gallery"
 			>
 				<Image
 					src={image.src}
@@ -34,6 +41,31 @@ const { images } = Astro.props;
 		))
 	}
 </section>
+
+<script>
+  import { Fancybox } from "@fancyapps/ui/dist/fancybox/";
+
+  Fancybox.bind("[data-fancybox]", {
+    theme: "auto",
+    mainStyle: {
+      "--f-button-width": "44px",
+      "--f-button-height": "44px",
+      "--f-button-border-radius": "50%",
+      "--f-toolbar-padding": "16px",
+    },
+    Carousel: {
+      Arrows: false,
+      Toolbar: {
+        display: {
+          left: [],
+          middle: [],
+          right: ["close"],
+        },
+      },
+      transition: "slide",
+    },
+  });
+</script>
 
 <script>
 	import '../scripts/photo-grid';
