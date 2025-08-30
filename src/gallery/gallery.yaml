@@ -1,80 +1,428 @@
 collections:
+  - id: astro
+    name: Astro
+  - id: misc
+    name: Misc
   - id: nature
     name: Nature
-  - id: street
-    name: Street
 images:
-  - path: nature/nature-2.jpg
+  - path: astro/DSC04429.jpeg
     meta:
-      title: Nature scene 2
-      description: Serene natural landscape capturing the essence of wilderness.
+      title: Dsc04429
+      description: ''
       collections:
-        - nature
-    exif: {}
-  - path: nature/nature-3.jpg
-    meta:
-      title: Nature scene 3
-      description: Breathtaking natural vista showcasing environmental beauty.
-      collections:
-        - featured
-        - nature
-    exif: {}
-  - path: nature/nature-5.jpg
-    meta:
-      title: Nature scene 5
-      description: Natural landscape showing the raw beauty of the environment.
-      collections:
-        - nature
-    exif: {}
-  - path: nature/nature-7.jpg
-    meta:
-      title: Nature scene 7
-      description: Stunning natural landscape capturing environmental beauty.
-      collections:
-        - featured
-        - nature
-    exif: {}
-  - path: nature/nature-8.jpg
-    meta:
-      title: Nature scene 8
-      description: Beautiful natural vista showcasing environmental wonder.
-      collections:
-        - nature
-    exif: {}
-  - path: nature/L1002174.jpg
-    meta:
-      title: Travel scene 6
-      description: null
-      collections:
-        - featured
-        - nature
+        - astro
     exif:
-      captureDate: 2025-03-27T10:35:21.000Z
-      fNumber: 8
-      focalLength: 28
+      captureDate: 2023-08-09T02:14:29.000Z
+      fNumber: 3.5
+      focalLength: 18
+      iso: 400
+      model: ILCE-6000
+      shutterSpeed: 0.001692047377326565
+      lensModel: E 18-55mm F3.5-5.6 OSS
+  - path: astro/DSC04431.jpeg
+    meta:
+      title: Dsc04431
+      description: ''
+      collections:
+        - astro
+    exif:
+      captureDate: 2023-08-09T02:16:20.000Z
+      fNumber: 3.5
+      focalLength: 18
+      iso: 3200
+      model: ILCE-6000
+      shutterSpeed: 0.05
+      lensModel: E 18-55mm F3.5-5.6 OSS
+  - path: astro/DSC07618.jpeg
+    meta:
+      title: Dsc07618
+      description: ''
+      collections:
+        - astro
+    exif:
+      captureDate: 2024-05-11T19:47:20.000Z
+      fNumber: 2.8
+      focalLength: 16
       iso: 100
-      model: LEICA Q3
-      shutterSpeed: 1250
-      lensModel: SUMMILUX 1:1.7/28 ASPH.
-  - path: nature/nature-10.jpg
+      model: ILCE-7CM2
+      shutterSpeed: 0.125
+      lensModel: FE 16-35mm F2.8 GM II
+  - path: astro/DSC07895.jpeg
     meta:
-      title: Nature scene 10
-      description: Majestic natural landscape displaying environmental splendor.
+      title: Dsc07895
+      description: ''
       collections:
-        - nature
-    exif: {}
-  - path: street/stree-1.jpg
+        - astro
+    exif:
+      captureDate: 2024-05-24T01:23:07.000Z
+      fNumber: 2.8
+      focalLength: 16
+      iso: 50
+      model: ILCE-7CM2
+      shutterSpeed: 0.0011111111111111111
+      lensModel: FE 16-35mm F2.8 GM II
+  - path: misc/DSC04941.jpeg
     meta:
-      title: Street photography 1
-      description: Urban scene capturing the essence of city life.
+      title: Dsc04941
+      description: ''
       collections:
-        - featured
-        - street
-    exif: {}
-  - path: nature/nature-1.jpg
+        - misc
+    exif:
+      captureDate: 2023-08-20T13:40:45.000Z
+      fNumber: 6.3
+      focalLength: 210
+      iso: 250
+      model: ILCE-6000
+      shutterSpeed: 2000
+      lensModel: E 55-210mm F4.5-6.3 OSS
+  - path: misc/DSC04993.jpeg
     meta:
-      title: Nature 1
+      title: Dsc04993
+      description: ''
+      collections:
+        - misc
+    exif:
+      captureDate: 2023-08-20T14:35:07.000Z
+      fNumber: 6.3
+      focalLength: 210
+      iso: 250
+      model: ILCE-6000
+      shutterSpeed: 2000
+      lensModel: E 55-210mm F4.5-6.3 OSS
+  - path: misc/DSC05065.jpeg
+    meta:
+      title: Dsc05065
+      description: ''
+      collections:
+        - misc
+    exif:
+      captureDate: 2023-08-20T14:42:51.000Z
+      fNumber: 5
+      focalLength: 86
+      iso: 160
+      model: ILCE-6000
+      shutterSpeed: 2000
+      lensModel: E 55-210mm F4.5-6.3 OSS
+  - path: misc/DSC08741.jpeg
+    meta:
+      title: Dsc08741
+      description: ''
+      collections:
+        - misc
+    exif:
+      captureDate: 2024-07-03T20:30:56.000Z
+      fNumber: 4.5
+      focalLength: 31
+      iso: 100
+      model: ILCE-7CM2
+      shutterSpeed: 60
+      lensModel: FE 28-60mm F4-5.6
+  - path: misc/DSC08927.jpeg
+    meta:
+      title: Dsc08927
+      description: ''
+      collections:
+        - misc
+    exif:
+      captureDate: 2024-07-04T02:50:46.000Z
+      fNumber: 5.6
+      focalLength: 60
+      iso: 160
+      model: ILCE-7CM2
+      shutterSpeed: 160
+      lensModel: FE 28-60mm F4-5.6
+  - path: misc/DSC08944.jpeg
+    meta:
+      title: Dsc08944
+      description: ''
+      collections:
+        - misc
+    exif:
+      captureDate: 2024-07-04T03:05:30.000Z
+      fNumber: 5.6
+      focalLength: 60
+      iso: 100
+      model: ILCE-7CM2
+      shutterSpeed: 250
+      lensModel: FE 28-60mm F4-5.6
+  - path: nature/BE819955-2CDE-401E-A473-CE04FD8E8D55.jpeg
+    meta:
+      title: Be819955 2cde 401e A473 Ce04fd8e8d55
       description: ''
       collections:
         - nature
-    exif: {}
+    exif:
+      captureDate: 2021-08-25T20:45:52.000Z
+      fNumber: 8
+      focalLength: 23
+      iso: 100
+      model: ILCE-6000
+      shutterSpeed: 100
+      lensModel: E 18-55mm F3.5-5.6 OSS
+  - path: nature/DSC01101.jpeg
+    meta:
+      title: Dsc01101
+      description: ''
+      collections:
+        - nature
+    exif:
+      captureDate: 2022-08-14T16:20:23.000Z
+      fNumber: 8
+      focalLength: 55
+      iso: 100
+      model: ILCE-6000
+      shutterSpeed: 125
+      lensModel: E 18-55mm F3.5-5.6 OSS
+  - path: nature/DSC01209.jpeg
+    meta:
+      title: Dsc01209
+      description: ''
+      collections:
+        - nature
+    exif:
+      captureDate: 2022-08-16T12:55:43.000Z
+      fNumber: 6.3
+      focalLength: 210
+      iso: 200
+      model: ILCE-6000
+      shutterSpeed: 400
+      lensModel: E 55-210mm F4.5-6.3 OSS
+  - path: nature/DSC01210.jpeg
+    meta:
+      title: Dsc01210
+      description: ''
+      collections:
+        - nature
+    exif:
+      captureDate: 2022-08-16T12:55:47.000Z
+      fNumber: 6.3
+      focalLength: 210
+      iso: 250
+      model: ILCE-6000
+      shutterSpeed: 400
+      lensModel: E 55-210mm F4.5-6.3 OSS
+  - path: nature/DSC01217.jpeg
+    meta:
+      title: Dsc01217
+      description: ''
+      collections:
+        - nature
+    exif:
+      captureDate: 2022-08-16T13:03:36.000Z
+      fNumber: 11
+      focalLength: 25
+      iso: 100
+      model: ILCE-6000
+      shutterSpeed: 125
+      lensModel: E 18-55mm F3.5-5.6 OSS
+  - path: nature/DSC01269.jpeg
+    meta:
+      title: Dsc01269
+      description: ''
+      collections:
+        - nature
+    exif:
+      captureDate: 2022-08-17T14:51:26.000Z
+      fNumber: 8
+      focalLength: 55
+      iso: 100
+      model: ILCE-6000
+      shutterSpeed: 125
+      lensModel: E 55-210mm F4.5-6.3 OSS
+  - path: nature/DSC01435.jpeg
+    meta:
+      title: Dsc01435
+      description: ''
+      collections:
+        - nature
+    exif:
+      captureDate: 2022-08-20T14:39:11.000Z
+      fNumber: 8
+      focalLength: 18
+      iso: 100
+      model: ILCE-6000
+      shutterSpeed: 125
+      lensModel: E 18-55mm F3.5-5.6 OSS
+  - path: nature/DSC01490.jpeg
+    meta:
+      title: Dsc01490
+      description: ''
+      collections:
+        - nature
+    exif:
+      captureDate: 2022-08-20T21:17:46.000Z
+      fNumber: 3.5
+      focalLength: 18
+      iso: 3200
+      model: ILCE-6000
+      shutterSpeed: 0.16666666666666666
+      lensModel: E 18-55mm F3.5-5.6 OSS
+  - path: nature/DSC01533.jpeg
+    meta:
+      title: Dsc01533
+      description: ''
+      collections:
+        - nature
+    exif:
+      captureDate: 2022-08-21T09:31:15.000Z
+      fNumber: 11
+      focalLength: 18
+      iso: 100
+      model: ILCE-6000
+      shutterSpeed: 125
+      lensModel: E 18-55mm F3.5-5.6 OSS
+  - path: nature/DSC02106.jpeg
+    meta:
+      title: Dsc02106
+      description: ''
+      collections:
+        - nature
+    exif:
+      captureDate: 2022-12-22T16:53:47.000Z
+      fNumber: 6.3
+      focalLength: 210
+      iso: 400
+      model: ILCE-6000
+      shutterSpeed: 400
+      lensModel: E 55-210mm F4.5-6.3 OSS
+  - path: nature/DSC02150.jpeg
+    meta:
+      title: Dsc02150
+      description: ''
+      collections:
+        - nature
+    exif:
+      captureDate: 2022-12-22T17:32:36.000Z
+      fNumber: 6.3
+      focalLength: 210
+      iso: 1250
+      model: ILCE-6000
+      shutterSpeed: 400
+      lensModel: E 55-210mm F4.5-6.3 OSS
+  - path: nature/DSC02797.jpeg
+    meta:
+      title: Dsc02797
+      description: ''
+      collections:
+        - nature
+    exif:
+      captureDate: 2022-12-25T10:08:10.000Z
+      fNumber: 9
+      focalLength: 18
+      iso: 100
+      model: ILCE-6000
+      shutterSpeed: 100
+      lensModel: E 18-55mm F3.5-5.6 OSS
+  - path: nature/DSC04206.jpeg
+    meta:
+      title: Dsc04206
+      description: ''
+      collections:
+        - nature
+    exif:
+      captureDate: 2023-08-06T20:33:33.000Z
+      fNumber: 6.3
+      focalLength: 210
+      iso: 400
+      model: ILCE-6000
+      shutterSpeed: 400
+      lensModel: E 55-210mm F4.5-6.3 OSS
+  - path: nature/DSC06144.jpeg
+    meta:
+      title: Dsc06144
+      description: ''
+      collections:
+        - nature
+    exif:
+      captureDate: 2023-12-22T15:32:19.000Z
+      fNumber: 8
+      focalLength: 18
+      iso: 100
+      model: ILCE-6000
+      shutterSpeed: 125
+      lensModel: E 18-55mm F3.5-5.6 OSS
+  - path: nature/DSC06270.jpeg
+    meta:
+      title: Dsc06270
+      description: ''
+      collections:
+        - nature
+    exif:
+      captureDate: 2023-12-22T16:10:50.000Z
+      fNumber: 5.6
+      focalLength: 147
+      iso: 160
+      model: ILCE-6000
+      shutterSpeed: 250
+      lensModel: E 55-210mm F4.5-6.3 OSS
+  - path: nature/DSC06659.jpeg
+    meta:
+      title: Dsc06659
+      description: ''
+      collections:
+        - nature
+    exif:
+      captureDate: 2023-12-24T15:56:44.000Z
+      fNumber: 6.3
+      focalLength: 206
+      iso: 3200
+      model: ILCE-6000
+      shutterSpeed: 200
+      lensModel: E 55-210mm F4.5-6.3 OSS
+  - path: nature/DSC07790.jpeg
+    meta:
+      title: Dsc07790
+      description: ''
+      collections:
+        - nature
+    exif:
+      captureDate: 2024-05-22T21:36:43.000Z
+      fNumber: 2.8
+      focalLength: 35
+      iso: 2000
+      model: ILCE-7CM2
+      shutterSpeed: 160
+      lensModel: FE 16-35mm F2.8 GM II
+  - path: nature/DSC07792.jpeg
+    meta:
+      title: Dsc07792
+      description: ''
+      collections:
+        - nature
+    exif:
+      captureDate: 2024-05-22T21:37:12.000Z
+      fNumber: 2.8
+      focalLength: 33
+      iso: 5000
+      model: ILCE-7CM2
+      shutterSpeed: 1000
+      lensModel: FE 16-35mm F2.8 GM II
+  - path: nature/IMG_0342.jpeg
+    meta:
+      title: Img 0342
+      description: ''
+      collections:
+        - nature
+    exif:
+      captureDate: 2020-08-06T20:38:28.000Z
+      fNumber: 1.8
+      focalLength: 3.99
+      iso: 32
+      model: iPhone 8
+      shutterSpeed: 1021
+      lensModel: iPhone 8 back camera 3.99mm f/1.8
+  - path: nature/IMG_1091.jpeg
+    meta:
+      title: Img 1091
+      description: ''
+      collections:
+        - nature
+    exif:
+      captureDate: 2022-08-18T12:34:07.000Z
+      fNumber: 2.4
+      focalLength: 1.54
+      iso: 20
+      model: iPhone 11 Pro
+      shutterSpeed: 940
+      lensModel: iPhone 11 Pro back triple camera 1.54mm f/2.4

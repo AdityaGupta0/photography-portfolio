@@ -1,8 +1,8 @@
 ---
-import 'glightbox/dist/css/glightbox.css';
-import '../styles/glightbox-custom.css';
+
 import { Image } from 'astro:assets';
 import type { Image as ImageType } from '../data/galleryData';
+import type { ImageExif } from '../data/galleryData';
 
 import "@fancyapps/ui/dist/fancybox/fancybox.css";
 
@@ -22,20 +22,24 @@ const { images } = Astro.props;
 				class="photo-item absolute transition-transform hover:scale-[1.02] hover:z-10"
 				data-gallery="gallery1"
 				data-type="image"
-				// data-glightbox={image.description ? `title: ${image.description}` : undefined}
-
 				style={'--width: ' + image.src.width + 'px; --height: ' + image.src.height + 'px;'}
 				target="_blank"
 				data-fancybox="gallery"
+				data-caption= {image.description}
 			>
 				<Image
 					src={image.src}
-					quality={90}
+					//quality={90}
 					format="webp"
 					width={image.src.width}
 					height={image.src.height}
 					class="w-full h-full object-cover rounded-sm shadow-sm hover:shadow-lg transition-shadow"
-					alt={image.title}
+					alt={
+						 "ISO "+image.exif?.iso+
+						 " &nbsp "+image.exif?.focalLength+"mm"+
+						 " &nbsp ƒ"+image.exif?.fNumber+
+						 " &nbsp "+image.exif?.shutterSpeed+"s"
+						}
 				/>
 			</a>
 		))
@@ -46,7 +50,7 @@ const { images } = Astro.props;
   import { Fancybox } from "@fancyapps/ui/dist/fancybox/";
 
   Fancybox.bind("[data-fancybox]", {
-    theme: "auto",
+    theme: "dark",
     mainStyle: {
       "--f-button-width": "44px",
       "--f-button-height": "44px",
@@ -54,15 +58,24 @@ const { images } = Astro.props;
       "--f-toolbar-padding": "16px",
     },
     Carousel: {
-      Arrows: false,
+      Arrows: true,
       Toolbar: {
         display: {
           left: [],
           middle: [],
-          right: ["close"],
+          right: ["autoplay","toggleFull","fullscreen","close"],
         },
       },
       transition: "slide",
+
+	  formatCaption: (carouselRef, slide) => {
+		return `${slide.caption}
+		<br/> 
+		<div style="text-align:center;">
+		${slide.alt}
+		</div>
+		`;
+	  }
     },
   });
 </script>

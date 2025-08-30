@@ -161,6 +161,7 @@ const createImageDataFor = (imagePath: string, img: GalleryImage): Image => {
 		title: img.meta.title,
 		description: img.meta.description,
 		collections: img.meta.collections,
+		exif: img.exif,
 	};
 };
 
