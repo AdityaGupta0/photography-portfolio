@@ -152,6 +152,7 @@ images:
       description: ''
       collections:
         - nature
+        - featured
     exif:
       captureDate: 2021-08-25T20:45:52.000Z
       fNumber: 8
@@ -180,6 +181,7 @@ images:
       description: ''
       collections:
         - nature
+        - featured
     exif:
       captureDate: 2022-08-16T12:55:43.000Z
       fNumber: 6.3
@@ -376,6 +378,7 @@ images:
       description: ''
       collections:
         - nature
+        - featured
     exif:
       captureDate: 2024-05-22T21:36:43.000Z
       fNumber: 2.8

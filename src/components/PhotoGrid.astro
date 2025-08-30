@@ -26,6 +26,8 @@ const { images } = Astro.props;
 				target="_blank"
 				data-fancybox="gallery"
 				data-caption= {image.description}
+				
+
 			>
 				<Image
 					src={image.src}
@@ -34,11 +36,12 @@ const { images } = Astro.props;
 					width={image.src.width}
 					height={image.src.height}
 					class="w-full h-full object-cover rounded-sm shadow-sm hover:shadow-lg transition-shadow"
+					
 					alt={
 						 "ISO "+image.exif?.iso+
 						 " &nbsp "+image.exif?.focalLength+"mm"+
 						 " &nbsp ƒ"+image.exif?.fNumber+
-						 " &nbsp "+image.exif?.shutterSpeed+"s"
+						 " &nbsp "+(1/(image.exif?.shutterSpeed ?? 0))+"s"
 						}
 				/>
 			</a>
