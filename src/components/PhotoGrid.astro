@@ -5,6 +5,7 @@ import type { Image as ImageType } from '../data/galleryData';
 import type { ImageExif } from '../data/galleryData';
 
 import "@fancyapps/ui/dist/fancybox/fancybox.css";
+import { slide } from 'astro:transitions';
 
 
 interface Props {
@@ -16,7 +17,7 @@ const { images } = Astro.props;
 
 <section id="photo-grid" class="relative w-full mx-auto overflow-hidden">
 	{
-		images.map((image) => (
+		images.map((image, index) => (
 			<a
 				href={image.src.src}
 				class="photo-item absolute transition-transform hover:scale-[1.02] hover:z-10"
@@ -31,12 +32,11 @@ const { images } = Astro.props;
 			>
 				<Image
 					src={image.src}
-					//quality={90}
 					format="webp"
 					width={image.src.width}
 					height={image.src.height}
 					class="w-full h-full object-cover rounded-sm shadow-sm hover:shadow-lg transition-shadow"
-					
+					loading={index < 10? "eager" : "lazy"}
 					alt={
 						 "ISO "+image.exif?.iso+
 						 " &nbsp "+image.exif?.focalLength+"mm"+
