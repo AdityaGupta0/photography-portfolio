@@ -1,8 +1,6 @@
 collections:
   - id: nature
     name: Nature
-  - id: travel
-    name: Travel
   - id: street
     name: Street
 images:
@@ -72,14 +70,6 @@ images:
       collections:
         - featured
         - street
-    exif: {}
-  - path: travel/travel-1.jpg
-    meta:
-      title: Travel scene 1
-      description: Journey through remarkable destinations.
-      collections:
-        - featured
-        - travel
     exif: {}
   - path: nature/nature-1.jpg
     meta:
