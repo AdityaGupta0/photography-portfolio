@@ -2,13 +2,13 @@
 title: About me
 ---
 
-### Hi, I'm Sara Richard 👋
+### Hi, I'm Aditya Gupta 
 
-I've been a photographer for over 10 years, focusing primarily on landscape and portrait photography. My journey began
-with a simple point-and-shoot camera while traveling through the mountains of Colorado, which sparked a passion that has
-taken me across the globe.
-My approach to photography centers on finding the extraordinary in ordinary moments. I believe that beauty exists
-everywhere – in urban streets, remote wilderness, and human connections. My goal is to capture these fleeting instances
-in a way that allows viewers to see the world through a different lens.
-When I'm not behind the camera, you can find me hiking in national parks, exploring new cities, or enjoying a cup of
-coffee at local cafés while planning my next photo adventure.
+I have been doing photography as a hobby since 2020. My focus in photography is capturing moments that inspire awe in me. I primarily dabble in landscape and astrophotography. 
+
+I started off with my iPhone's camera before progressing to a cheap used Sony a6000. Just recently though I've saved out to get myself a Sony a7C mk. II along with a couple lenses and a real tripod. 
+
+While I mostly just do this for myself, I have done a couple projects for others. Most notably I filmed and edited videos for my robotics teams which were evaluated and ranked highly. I have also done a couple graduation photoshoots for making some quick money (but I'm still broke as hell).
+
+
+

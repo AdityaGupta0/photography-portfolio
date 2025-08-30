@@ -7,7 +7,11 @@
 
 @layer base {
 	:root {
-		--background: 0 0% 100%;
+		--background: #000000;
+
+		--bg: #ffffff;
+  		--bg-dark: #000000;
+
 		--foreground: 240 10% 3.9%;
 		--card: 0 0% 100%;
 		--card-foreground: 240 10% 3.9%;
@@ -30,7 +34,8 @@
 	}
 
 	body {
-		@apply bg-background text-foreground font-sans;
+		background-color: light-dark(var(--bg), var(--bg-dark));
+		@apply text-foreground font-sans;
 		font-family: 'Inter', sans-serif;
 	}
 
@@ -44,7 +49,7 @@
 	}
 
 	#logo {
-		font-family: 'Dancing Script', cursive;
+		font-family: 'Aguafina Script', cursive;
 	}
 }
 

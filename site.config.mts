@@ -8,10 +8,10 @@ export interface SocialLink {
 }
 
 export default {
-	title: 'SR',
+	title: 'AG',
 	favicon: 'favicon.ico',
-	owner: 'Sara Richard',
-	profileImage: 'profile.webp',
+	owner: 'Aditya Gupta',
+	profileImage: 'profile1.jpeg',
 	socialLinks: [
 		{
 			name: 'GitHub',
