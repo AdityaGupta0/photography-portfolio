@@ -17,35 +17,36 @@ const { images } = Astro.props;
 
 <section id="photo-grid" class="relative w-full mx-auto overflow-hidden">
 	{
-		images.map((image, index) => (
-			<a
-				href={image.src.src}
-				class="photo-item absolute transition-transform hover:scale-[1.02] hover:z-10"
-				data-gallery="gallery1"
-				data-type="image"
-				style={'--width: ' + image.src.width + 'px; --height: ' + image.src.height + 'px;'}
-				target="_blank"
-				data-fancybox="gallery"
-				data-caption= {image.description}
-				
-
-			>
-				<Image
-					src={image.src}
-					format="webp"
-					width={image.src.width}
-					height={image.src.height}
-					class="w-full h-full object-cover rounded-sm shadow-sm hover:shadow-lg transition-shadow"
-					loading={index < 10? "eager" : "lazy"}
-					alt={
-						 "ISO "+image.exif?.iso+
-						 " &nbsp "+image.exif?.focalLength+"mm"+
-						 " &nbsp ƒ"+image.exif?.fNumber+
-						 " &nbsp "+(1/(image.exif?.shutterSpeed ?? 0))+"s"
-						}
-				/>
-			</a>
-		))
+		Object.entries(images).map(async ([_path, image], index) => {
+			//const { default: imageData } = await image();
+			return (
+				<a
+					href={image.src.src}
+					class="photo-item absolute transition-transform hover:scale-[1.02] hover:z-10"
+					data-gallery="gallery1"
+					data-type="image"
+					style={'--width: ' + image.src.width + 'px; --height: ' + image.src.height + 'px;'}
+					target="_blank"
+					data-fancybox="gallery"
+					data-caption= {image.description}
+				>
+					<Image
+						src={image.src}
+						format="webp"
+						width={image.src.width}
+						height={image.src.height}
+						class="w-full h-full object-cover rounded-sm shadow-sm hover:shadow-lg transition-shadow"
+						loading={index < 2? "eager" : "lazy"}
+						alt={
+							"ISO "+image.exif?.iso+
+							" &nbsp "+image.exif?.focalLength+"mm"+
+							" &nbsp ƒ"+image.exif?.fNumber+
+							" &nbsp "+(1/(image.exif?.shutterSpeed ?? 0))+"s"
+							}
+					/>
+				</a>
+			);
+		})
 	}
 </section>
 
