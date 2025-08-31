@@ -18,7 +18,7 @@ const { images } = Astro.props;
 <section id="photo-grid" class="relative w-full mx-auto overflow-hidden">
 	{
 		Object.entries(images).map(async ([_path, image], index) => {
-			//const { default: imageData } = await image();
+			//const { default: image.src } = await image();
 			return (
 				<a
 					href={image.src.src}
