@@ -2,7 +2,7 @@
 title: About me
 ---
 
-### Hi, I'm Aditya Gupta 
+### Hi, I'm Adi 
 
 I have been doing photography as a hobby since 2020. My focus in photography is capturing moments that inspire awe in me. I primarily dabble in landscape and astrophotography. 
 
