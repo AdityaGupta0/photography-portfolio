@@ -10,7 +10,7 @@ I started off with my iPhone's camera before progressing to a cheap used Sony a6
 
 While I mostly just do this for myself, I have done a couple projects for others. Most notably I filmed and edited videos for my robotics teams which were evaluated and ranked highly. I have also done a couple graduation photoshoots for making some quick money (but I'm still broke as hell).
 
-*This site is currenlty a placeholder while finish my complete website.*
+*This website is a placeholder while I finish construction on my main site*
 
 
 

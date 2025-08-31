@@ -11,7 +11,7 @@ export default {
 	title: 'AG',
 	favicon: 'favicon.ico',
 	owner: 'Aditya Gupta',
-	profileImage: 'profile1.jpeg',
+	profileImage: 'profile.jpeg',
 	socialLinks: [
 		{
 			name: 'GitHub',
