@@ -401,20 +401,6 @@ images:
       model: ILCE-7CM2
       shutterSpeed: 1000
       lensModel: FE 16-35mm F2.8 GM II
-  - path: nature/IMG_0342.jpeg
-    meta:
-      title: Img 0342
-      description: ''
-      collections:
-        - nature
-    exif:
-      captureDate: 2020-08-06T20:38:28.000Z
-      fNumber: 1.8
-      focalLength: 3.99
-      iso: 32
-      model: iPhone 8
-      shutterSpeed: 1021
-      lensModel: iPhone 8 back camera 3.99mm f/1.8
   - path: nature/IMG_1091.jpeg
     meta:
       title: Img 1091
