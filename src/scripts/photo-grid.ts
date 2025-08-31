@@ -1,5 +1,4 @@
 import justifiedLayout from 'justified-layout';
-import GLightbox from 'glightbox';
 
 interface JustifiedLayoutResult {
 	/**
@@ -46,7 +45,7 @@ interface LayoutBox {
 	forcedAspectRatio?: boolean;
 }
 
-export async function setupGallery() {
+export function setupGallery() {
 	if (typeof document === 'undefined') return;
 
 	const container = document.getElementById('photo-grid');
@@ -63,32 +62,26 @@ export async function setupGallery() {
 	}
 
 	// Wait for all images to load
-	const imageElements = await waitForImagesToLoad(container);
+	//const imageElements = await waitForImagesToLoad(container);
 
 	// Get actual image dimensions after loading
-	const layout = createLayoutFor(imageElements, container);
+	const layout = createLayoutFor(imageLinks, container);
 	console.log('Generated layout:', layout);
 
 	applyImagesStyleBasedOnLayout(imageLinks, layout);
 	applyContainerStyleBasedOnLayout(container, layout);
 
-	// Initialize GLightbox
-	GLightbox({
-		selector: '.glightbox',
-		openEffect: 'zoom',
-		closeEffect: 'fade',
-		width: 'auto',
-		height: 'auto',
-	});
 }
 
 function createLayoutFor(
-	imageElements: HTMLImageElement[],
+	imageLinks: HTMLElement[],
 	container: HTMLElement,
 ): JustifiedLayoutResult {
-	const imageSizes = imageElements.map((img) => ({
-		width: img.naturalWidth || img.width || 300,
-		height: img.naturalHeight || img.height || 200,
+	const imageSizes = imageLinks.map((link) => ({
+		//width: img.naturalWidth || img.width || 300,
+		//height: img.naturalHeight || img.height || 200,
+		width: parseFloat(getComputedStyle(link).getPropertyValue('--width')) || 400,
+		height: parseFloat(getComputedStyle(link).getPropertyValue('--height')) || 300,
 	}));
 
 	const layout = justifiedLayout(imageSizes, {
@@ -100,24 +93,24 @@ function createLayoutFor(
 	return layout;
 }
 
-async function waitForImagesToLoad(container: HTMLElement) {
-	const imageElements = Array.from(container.querySelectorAll('img')) as HTMLImageElement[];
+// async function waitForImagesToLoad(container: HTMLElement) {
+// 	const imageElements = Array.from(container.querySelectorAll('img')) as HTMLImageElement[];
 
-	await Promise.all(
-		imageElements.map(
-			(img) =>
-				new Promise((resolve) => {
-					if (img.complete) {
-						resolve(null);
-					} else {
-						img.onload = () => resolve(null);
-						img.onerror = () => resolve(null);
-					}
-				}),
-		),
-	);
-	return imageElements;
-}
+// 	await Promise.all(
+// 		imageElements.map(
+// 			(img) =>
+// 				new Promise((resolve) => {
+// 					if (img.complete) {
+// 						resolve(null);
+// 					} else {
+// 						img.onload = () => resolve(null);
+// 						img.onerror = () => resolve(null);
+// 					}
+// 				}),
+// 		),
+// 	);
+// 	return imageElements;
+// }
 
 function applyImagesStyleBasedOnLayout(imageLinks: HTMLElement[], layout: JustifiedLayoutResult) {
 	imageLinks.forEach((el, i) => {
@@ -159,3 +152,4 @@ function debounce<T extends (...args: unknown[]) => unknown>(func: T, wait: numb
 		timeout = setTimeout(later, wait);
 	};
 }
+

@@ -34,20 +34,6 @@ images:
       model: ILCE-6000
       shutterSpeed: 0.05
       lensModel: E 18-55mm F3.5-5.6 OSS
-  - path: astro/DSC07618.jpeg
-    meta:
-      title: Dsc07618
-      description: ''
-      collections:
-        - astro
-    exif:
-      captureDate: 2024-05-11T19:47:20.000Z
-      fNumber: 2.8
-      focalLength: 16
-      iso: 100
-      model: ILCE-7CM2
-      shutterSpeed: 0.125
-      lensModel: FE 16-35mm F2.8 GM II
   - path: astro/DSC07895.jpeg
     meta:
       title: Dsc07895
@@ -61,6 +47,20 @@ images:
       iso: 50
       model: ILCE-7CM2
       shutterSpeed: 0.0011111111111111111
+      lensModel: FE 16-35mm F2.8 GM II
+  - path: astro/DSC09078.jpeg
+    meta:
+      title: Dsc09078
+      description: ''
+      collections:
+        - astro
+    exif:
+      captureDate: 2024-09-07T22:24:35.000Z
+      fNumber: 2.8
+      focalLength: 16
+      iso: 3200
+      model: ILCE-7CM2
+      shutterSpeed: 0.07692307692307693
       lensModel: FE 16-35mm F2.8 GM II
   - path: misc/DSC04941.jpeg
     meta:
@@ -274,6 +274,20 @@ images:
       model: ILCE-6000
       shutterSpeed: 125
       lensModel: E 18-55mm F3.5-5.6 OSS
+  - path: nature/DSC01542.jpeg
+    meta:
+      title: Dsc01542
+      description: ''
+      collections:
+        - nature
+    exif:
+      captureDate: 2022-08-21T16:44:37.000Z
+      fNumber: 5.6
+      focalLength: 55
+      iso: 320
+      model: ILCE-6000
+      shutterSpeed: 100
+      lensModel: E 18-55mm F3.5-5.6 OSS
   - path: nature/DSC02106.jpeg
     meta:
       title: Dsc02106
@@ -322,6 +336,7 @@ images:
       description: ''
       collections:
         - nature
+        - featured
     exif:
       captureDate: 2023-08-06T20:33:33.000Z
       fNumber: 6.3
@@ -378,7 +393,6 @@ images:
       description: ''
       collections:
         - nature
-        - featured
     exif:
       captureDate: 2024-05-22T21:36:43.000Z
       fNumber: 2.8
