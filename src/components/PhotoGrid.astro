@@ -73,8 +73,10 @@ const { images } = Astro.props;
       transition: "slide",
 
 	  formatCaption: (carouselRef, slide) => {
-		return `${slide.caption}
-		<br/> 
+		return `
+		<div style="text-align:center;">
+		${slide.caption}
+		</div>
 		<div style="text-align:center;">
 		${slide.alt}
 		</div>
