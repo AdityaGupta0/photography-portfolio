@@ -145,7 +145,7 @@ images:
       title: Be819955 2cde 401e A473 Ce04fd8e8d55
       description: >-
         A majestic peak illuminated by the soft glow of the waning sun at
-        Glacier Nation Park
+        Glacier National Park
       collections:
         - nature
         - featured
@@ -189,7 +189,7 @@ images:
   - path: nature/DSC01210.jpeg
     meta:
       title: Dsc01210
-      description: A puffin looks with interest towards a lone photography in Iceland.
+      description: A puffin looks with interest towards a lone photographer in Iceland.
       collections:
         - nature
     exif:
