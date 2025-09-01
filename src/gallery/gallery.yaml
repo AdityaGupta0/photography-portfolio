@@ -9,7 +9,7 @@ images:
   - path: astro/DSC04429.jpeg
     meta:
       title: Dsc04429
-      description: ''
+      description: 'Super long exposure to capture the star trails as the core of the Milky Way moves past.'
       collections:
         - astro
     exif:
@@ -23,7 +23,7 @@ images:
   - path: astro/DSC04431.jpeg
     meta:
       title: Dsc04431
-      description: ''
+      description: 'The core of the Milky Way as seen from the summit of Mauna Kea, Hawaii.'
       collections:
         - astro
     exif:
@@ -37,7 +37,7 @@ images:
   - path: astro/DSC07618.jpeg
     meta:
       title: Dsc07618
-      description: ''
+      description: 'Ultra long exposure capturing the rapid spiral movement of the unverse around us.'
       collections:
         - astro
     exif:
@@ -51,7 +51,7 @@ images:
   - path: astro/DSC07895.jpeg
     meta:
       title: Dsc07895
-      description: ''
+      description: 'The core of our galaxy, as seen from rural Ohio.'
       collections:
         - astro
     exif:
@@ -65,7 +65,7 @@ images:
   - path: misc/DSC04941.jpeg
     meta:
       title: Dsc04941
-      description: ''
+      description: 'Two paratroopers moments after breaking off their tandem cord and parting ways.'
       collections:
         - misc
     exif:
@@ -79,7 +79,7 @@ images:
   - path: misc/DSC04993.jpeg
     meta:
       title: Dsc04993
-      description: ''
+      description: 'Thunderbird F-16s making a high-g turn at low altitude in tight formation above Chicago.'
       collections:
         - misc
     exif:
@@ -93,7 +93,7 @@ images:
   - path: misc/DSC05065.jpeg
     meta:
       title: Dsc05065
-      description: ''
+      description: 'Thunderbird F-16s fling in formation at the Chicago Air & Water show.'
       collections:
         - misc
     exif:
@@ -107,7 +107,7 @@ images:
   - path: misc/DSC08741.jpeg
     meta:
       title: Dsc08741
-      description: ''
+      description: 'The Taj Mahal on a monsoon morning.'
       collections:
         - misc
     exif:
@@ -121,7 +121,7 @@ images:
   - path: misc/DSC08927.jpeg
     meta:
       title: Dsc08927
-      description: ''
+      description: 'A monkey resting on a marble railing at a palace in Agra, India.'
       collections:
         - misc
     exif:
@@ -135,7 +135,7 @@ images:
   - path: misc/DSC08944.jpeg
     meta:
       title: Dsc08944
-      description: ''
+      description: 'The intricate stonework of the Agra Palace pilars in veiw of the Taj Mahal.'
       collections:
         - misc
     exif:
@@ -149,7 +149,7 @@ images:
   - path: nature/BE819955-2CDE-401E-A473-CE04FD8E8D55.jpeg
     meta:
       title: Be819955 2cde 401e A473 Ce04fd8e8d55
-      description: ''
+      description: 'A majestic peak illuminated by the soft glow of the waning sun at Glacier Nation Park'
       collections:
         - nature
         - featured
@@ -164,7 +164,7 @@ images:
   - path: nature/DSC01101.jpeg
     meta:
       title: Dsc01101
-      description: ''
+      description: 'The sun slipping behind an island near Iceland.'
       collections:
         - nature
     exif:
@@ -178,7 +178,7 @@ images:
   - path: nature/DSC01209.jpeg
     meta:
       title: Dsc01209
-      description: ''
+      description: 'A puffin takes flight while two other watch, off the coast of Iceland.'
       collections:
         - nature
         - featured
@@ -193,7 +193,7 @@ images:
   - path: nature/DSC01210.jpeg
     meta:
       title: Dsc01210
-      description: ''
+      description: 'A puffin looks with interest towards a lone photography in Iceland.'
       collections:
         - nature
     exif:
@@ -207,7 +207,7 @@ images:
   - path: nature/DSC01217.jpeg
     meta:
       title: Dsc01217
-      description: ''
+      description: 'The vast tilting landscape of Iceland.'
       collections:
         - nature
     exif:
@@ -221,7 +221,7 @@ images:
   - path: nature/DSC01269.jpeg
     meta:
       title: Dsc01269
-      description: ''
+      description: 'The lush radiant spectrum of green cause by the setting sun in Iceland.'
       collections:
         - nature
     exif:
@@ -235,7 +235,7 @@ images:
   - path: nature/DSC01435.jpeg
     meta:
       title: Dsc01435
-      description: ''
+      description: 'A slice of the never ending expanse in Iceland.'
       collections:
         - nature
     exif:
@@ -249,7 +249,7 @@ images:
   - path: nature/DSC01490.jpeg
     meta:
       title: Dsc01490
-      description: ''
+      description: 'Auroras caused by the 2022 coronal mass ejection.'
       collections:
         - nature
     exif:
@@ -263,7 +263,7 @@ images:
   - path: nature/DSC01533.jpeg
     meta:
       title: Dsc01533
-      description: ''
+      description: 'The meeting point of lava and water a hundred years ago in Iceland.'
       collections:
         - nature
     exif:
@@ -274,10 +274,24 @@ images:
       model: ILCE-6000
       shutterSpeed: 125
       lensModel: E 18-55mm F3.5-5.6 OSS
+  - path: nature/DSC01542.jpeg
+    meta:
+      title: Dsc01542
+      description: 'The vibrant flare of a pacific sunset over Hawaii.'
+      collections:
+        - nature
+    exif:
+      captureDate: 2022-08-21T16:44:37.000Z
+      fNumber: 5.6
+      focalLength: 55
+      iso: 320
+      model: ILCE-6000
+      shutterSpeed: 100
+      lensModel: E 18-55mm F3.5-5.6 OSS
   - path: nature/DSC02106.jpeg
     meta:
       title: Dsc02106
-      description: ''
+      description: 'A lone melting snowman in Utah'
       collections:
         - nature
     exif:
@@ -291,7 +305,7 @@ images:
   - path: nature/DSC02150.jpeg
     meta:
       title: Dsc02150
-      description: ''
+      description: 'An elk grazing.'
       collections:
         - nature
     exif:
@@ -305,7 +319,7 @@ images:
   - path: nature/DSC02797.jpeg
     meta:
       title: Dsc02797
-      description: ''
+      description: 'The morning sun shining upon the Grand Canyon.'
       collections:
         - nature
     exif:
@@ -319,7 +333,7 @@ images:
   - path: nature/DSC04206.jpeg
     meta:
       title: Dsc04206
-      description: ''
+      description: 'A sea turtle rests upon a black sand beach.'
       collections:
         - nature
     exif:
@@ -333,7 +347,7 @@ images:
   - path: nature/DSC06144.jpeg
     meta:
       title: Dsc06144
-      description: ''
+      description: 'A window to the sky within a dense rainforest.'
       collections:
         - nature
     exif:
@@ -347,7 +361,7 @@ images:
   - path: nature/DSC06270.jpeg
     meta:
       title: Dsc06270
-      description: ''
+      description: 'The rising clouds above the trees in a mountain.'
       collections:
         - nature
     exif:
@@ -361,7 +375,7 @@ images:
   - path: nature/DSC06659.jpeg
     meta:
       title: Dsc06659
-      description: ''
+      description: 'A lone hummingbird resting upon a small branch.'
       collections:
         - nature
     exif:
@@ -375,7 +389,7 @@ images:
   - path: nature/DSC07790.jpeg
     meta:
       title: Dsc07790
-      description: ''
+      description: 'A peice of driftwood washed onto a beach in the sunset.'
       collections:
         - nature
         - featured
@@ -390,7 +404,7 @@ images:
   - path: nature/DSC07792.jpeg
     meta:
       title: Dsc07792
-      description: ''
+      description: 'The same chunk of driftwood after the sun has set.'
       collections:
         - nature
     exif:
@@ -404,7 +418,7 @@ images:
   - path: nature/IMG_1091.jpeg
     meta:
       title: Img 1091
-      description: ''
+      description: 'A lone glacial iceberg scared by volcanic rock in Iceland.'
       collections:
         - nature
     exif:

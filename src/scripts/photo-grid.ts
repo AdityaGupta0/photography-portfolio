@@ -1,5 +1,5 @@
 import justifiedLayout from 'justified-layout';
-import GLightbox from 'glightbox';
+
 
 interface JustifiedLayoutResult {
 	/**
@@ -72,14 +72,6 @@ export async function setupGallery() {
 	applyImagesStyleBasedOnLayout(imageLinks, layout);
 	applyContainerStyleBasedOnLayout(container, layout);
 
-	// Initialize GLightbox
-	GLightbox({
-		selector: '.glightbox',
-		openEffect: 'zoom',
-		closeEffect: 'fade',
-		width: 'auto',
-		height: 'auto',
-	});
 }
 
 function createLayoutFor(

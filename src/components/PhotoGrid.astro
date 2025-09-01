@@ -18,7 +18,6 @@ const { images } = Astro.props;
 <section id="photo-grid" class="relative w-full mx-auto overflow-hidden">
 	{
 		Object.entries(images).map(async ([_path, image], index) => {
-			//const { default: image.src } = await image();
 			return (
 				<a
 					href={image.src.src}
@@ -33,7 +32,7 @@ const { images } = Astro.props;
 					<Image
 						src={image.src}
 						quality={100}
-						format="webp"
+						//format="webp"
 						width={image.src.width}
 						height={image.src.height}
 						class="w-full h-full object-cover rounded-sm shadow-sm hover:shadow-lg transition-shadow"
@@ -42,7 +41,7 @@ const { images } = Astro.props;
 							"ISO "+image.exif?.iso+
 							" &nbsp "+image.exif?.focalLength+"mm"+
 							" &nbsp ƒ"+image.exif?.fNumber+
-							" &nbsp "+(1/(image.exif?.shutterSpeed ?? 0))+"s"
+							" &nbsp "+( (image.exif?.shutterSpeed ?? 1) < 1 ? 1 / (image.exif?.shutterSpeed ?? 1) : "1/" + (image.exif?.shutterSpeed ?? 1))+"s"
 							}
 					/>
 				</a>
