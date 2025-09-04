@@ -12,6 +12,8 @@ export default {
 	favicon: 'favicon.ico',
 	owner: 'Aditya Gupta',
 	profileImage: 'profile.jpeg',
+
+	/*
 	socialLinks: [
 		{
 			name: 'GitHub',
@@ -29,4 +31,5 @@ export default {
 			icon: Mail,
 		} as SocialLink,
 	],
+	*/
 };
