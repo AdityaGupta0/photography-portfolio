@@ -13,7 +13,7 @@ export default {
 	owner: 'Aditya Gupta',
 	profileImage: 'profile.jpeg',
 
-	/*
+	
 	socialLinks: [
 		{
 			name: 'GitHub',
@@ -31,5 +31,5 @@ export default {
 			icon: Mail,
 		} as SocialLink,
 	],
-	*/
+	
 };
