@@ -4,7 +4,7 @@ import { Github, Instagram, Mail } from 'lucide-astro';
 export interface SocialLink {
 	name: string;
 	url: string;
-	icon: AstroInstance;
+	icon: any;
 }
 
 export default {
