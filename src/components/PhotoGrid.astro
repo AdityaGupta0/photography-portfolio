@@ -20,9 +20,11 @@ const { images } = Astro.props;
 			const shutter = exif?.shutterSpeed ?? 1;
 			const shutterStr = shutter < 1 ? `1/${Math.round(1 / shutter)}` : `${shutter}`;
 			const altText = `ISO ${exif?.iso ?? '-'} ${exif?.focalLength ?? '-'}mm ƒ${exif?.fNumber ?? '-'} ${shutterStr}s`;
+			const thumbnailSrc = `${image.src.src}?w=800&h=600&fit=cover&format=webp`;
+
 			return (
 				<a
-					href={image.src.src}
+					href={thumbnailSrc}
 					class="photo-item absolute transition-transform hover:scale-[1.02] hover:z-10 group"
 					data-gallery="gallery1"
 					data-type="image"
@@ -37,7 +39,7 @@ const { images } = Astro.props;
 					<Image
 						src={image.src}
 						format="webp"
-						quality={100}
+						quality={92}
 						width={image.src.width}
 						height={image.src.height}
 						class="w-full h-full object-cover rounded-sm shadow-sm hover:shadow-lg transition-shadow duration-300 opacity-0 blur-sm will-change-filter will-change-opacity"
@@ -54,6 +56,7 @@ const { images } = Astro.props;
 
 <script>
   import { Fancybox } from "@fancyapps/ui/dist/fancybox/";
+  import { Lazyload } from "@fancyapps/ui/dist/carousel/carousel.lazyload.js";
 
   Fancybox.bind("[data-fancybox]", {
     theme: "dark",
@@ -83,7 +86,8 @@ const { images } = Astro.props;
 		${slide.alt}
 		</div>
 		`;
-	  }
+	  },
+	  Lazyload: {preload: 2, showLoading: true,}
     },
   });
 </script>
