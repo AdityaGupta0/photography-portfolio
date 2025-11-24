@@ -2,10 +2,8 @@
 
 import { Image } from 'astro:assets';
 import type { Image as ImageType } from '../data/galleryData';
-import type { ImageExif } from '../data/galleryData';
 
 import "@fancyapps/ui/dist/fancybox/fancybox.css";
-import { slide } from 'astro:transitions';
 
 
 interface Props {
@@ -17,32 +15,36 @@ const { images } = Astro.props;
 
 <section id="photo-grid" class="relative w-full mx-auto overflow-hidden">
 	{
-		Object.entries(images).map(async ([_path, image], index) => {
+		images.map((image, index) => {
+			const exif = image.exif;
+			const shutter = exif?.shutterSpeed ?? 1;
+			const shutterStr = shutter < 1 ? `1/${Math.round(1 / shutter)}` : `${shutter}`;
+			const altText = `ISO ${exif?.iso ?? '-'} ${exif?.focalLength ?? '-'}mm ƒ${exif?.fNumber ?? '-'} ${shutterStr}s`;
 			return (
 				<a
 					href={image.src.src}
-					class="photo-item absolute transition-transform hover:scale-[1.02] hover:z-10"
+					class="photo-item absolute transition-transform hover:scale-[1.02] hover:z-10 group"
 					data-gallery="gallery1"
 					data-type="image"
 					style={'--width: ' + image.src.width + 'px; --height: ' + image.src.height + 'px;'}
+					data-width={image.src.width}
+					data-height={image.src.height}
+					data-alt={altText}
 					target="_blank"
 					data-fancybox="gallery"
-					data-caption= {image.description}
+					data-caption={image.description}
 				>
 					<Image
 						src={image.src}
-						quality={100}
-						//format="webp"
+						format="webp"
+						quality={70}
 						width={image.src.width}
 						height={image.src.height}
-						class="w-full h-full object-cover rounded-sm shadow-sm hover:shadow-lg transition-shadow"
-						loading={index < 2? "eager" : "lazy"}
-						alt={
-							"ISO "+image.exif?.iso+
-							" &nbsp "+image.exif?.focalLength+"mm"+
-							" &nbsp ƒ"+image.exif?.fNumber+
-							" &nbsp "+( (image.exif?.shutterSpeed ?? 1) < 1 ? 1 / (image.exif?.shutterSpeed ?? 1) : "1/" + (image.exif?.shutterSpeed ?? 1))+"s"
-							}
+						class="w-full h-full object-cover rounded-sm shadow-sm hover:shadow-lg transition-shadow duration-300 opacity-0 blur-sm will-change-filter will-change-opacity"
+						loading={index < 2 ? "eager" : "lazy"}
+						decoding="async"
+						fetchpriority={index < 2 ? "high" : "auto"}
+						alt={altText}
 					/>
 				</a>
 			);
@@ -88,4 +90,24 @@ const { images } = Astro.props;
 
 <script>
 	import '../scripts/photo-grid';
+</script>
+
+<script>
+// reveal images after they load (blur-up)
+if (typeof window !== 'undefined') {
+	const revealLoaded = () => {
+		document.querySelectorAll('#photo-grid img').forEach((img) => {
+			if ((img as HTMLImageElement).complete) {
+				img.classList.remove('opacity-0','blur-sm');
+				img.classList.add('opacity-100');
+			} else {
+				img.addEventListener('load', () => {
+					img.classList.remove('opacity-0','blur-sm');
+					img.classList.add('opacity-100');
+				}, { once: true });
+			}
+		});
+	};
+	document.addEventListener('DOMContentLoaded', revealLoaded);
+}
 </script>

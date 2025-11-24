@@ -56,59 +56,52 @@ export async function setupGallery() {
 	}
 
 	const imageLinks = Array.from(container.querySelectorAll('.photo-item')) as HTMLElement[];
+	if (!imageLinks.length) return;
 
-	if (imageLinks.length === 0) {
-		console.warn('No images found inside the photo grid.');
-		return;
-	}
+	// Build initial layout immediately from data-width/data-height (no network wait)
+	const initialLayout = createLayoutFromData(imageLinks, container);
+	applyImagesStyleBasedOnLayout(imageLinks, initialLayout);
+	applyContainerStyleBasedOnLayout(container, initialLayout);
 
-	// Wait for all images to load
-	const imageElements = await waitForImagesToLoad(container);
-
-	// Get actual image dimensions after loading
-	const layout = createLayoutFor(imageElements, container);
-	console.log('Generated layout:', layout);
-
-	applyImagesStyleBasedOnLayout(imageLinks, layout);
-	applyContainerStyleBasedOnLayout(container, layout);
-
+	// Refine after all images have loaded (non-blocking)
+	refineLayoutAfterLoads(container, imageLinks);
 }
 
-function createLayoutFor(
-	imageElements: HTMLImageElement[],
-	container: HTMLElement,
-): JustifiedLayoutResult {
-	const imageSizes = imageElements.map((img) => ({
-		width: img.naturalWidth || img.width || 300,
-		height: img.naturalHeight || img.height || 200,
-	}));
-
-	const layout = justifiedLayout(imageSizes, {
+function createLayoutFromData(items: HTMLElement[], container: HTMLElement): JustifiedLayoutResult {
+	const sizes = items.map((el) => {
+		const w = parseInt(el.dataset.width || '300', 10);
+		const h = parseInt(el.dataset.height || '200', 10);
+		return { width: w, height: h };
+	});
+	return justifiedLayout(sizes, {
 		containerWidth: container.clientWidth || window.innerWidth,
 		targetRowHeight: 300,
 		boxSpacing: 10,
 		containerPadding: 0,
 	});
-	return layout;
 }
 
-async function waitForImagesToLoad(container: HTMLElement) {
-	const imageElements = Array.from(container.querySelectorAll('img')) as HTMLImageElement[];
-
-	await Promise.all(
-		imageElements.map(
-			(img) =>
-				new Promise((resolve) => {
-					if (img.complete) {
-						resolve(null);
-					} else {
-						img.onload = () => resolve(null);
-						img.onerror = () => resolve(null);
-					}
-				}),
-		),
-	);
-	return imageElements;
+function refineLayoutAfterLoads(container: HTMLElement, items: HTMLElement[]) {
+	const imgs = Array.from(container.querySelectorAll('img')) as HTMLImageElement[];
+	if (!imgs.length) return;
+	let loaded = 0;
+	const total = imgs.length;
+	const check = () => {
+		loaded++;
+		if (loaded === total) {
+			const refined = createLayoutFromData(items, container);
+			applyImagesStyleBasedOnLayout(items, refined);
+			applyContainerStyleBasedOnLayout(container, refined);
+		}
+	};
+	imgs.forEach((img) => {
+		if (img.complete) {
+			check();
+		} else {
+			img.addEventListener('load', check, { once: true });
+			img.addEventListener('error', check, { once: true });
+		}
+	});
 }
 
 function applyImagesStyleBasedOnLayout(imageLinks: HTMLElement[], layout: JustifiedLayoutResult) {
