@@ -67,6 +67,7 @@ const { images } = Astro.props;
       "--f-toolbar-padding": "16px",
     },
     Carousel: {
+	  Thumbs: false,
       Arrows: true,
       Toolbar: {
         display: {
@@ -75,7 +76,8 @@ const { images } = Astro.props;
           right: ["autoplay","toggleFull","fullscreen","close"],
         },
       },
-      transition: "slide",
+      transition: "fade",
+	  
 
 	  formatCaption: (carouselRef, slide) => {
 		return `
