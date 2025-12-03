@@ -1,2 +1,2 @@
-# Basic Photography Portfolio
-This is simple website for displaying various images in an orginized form. I used AstroJS along with Fancybox to create the image galleries and lightbox. You can access it here: https://photo.adigupta.me
+# Photography Portfolio
+This is simple website for displaying my photographic works without the insane compression and terrible privacy problems of other websites (like instagram). I used AstroJS along with Fancybox to create the image galleries and lightbox. I plan to make a unified personal website in the future that will incorperate the gallery elements from this site. Currently, this site is quite laggy as it is loading many ultra-hihg resultion images with little compression, I have tried to implement lazy loading and such but there is only so much I know how to do, and I don't have much motiviation to invest much time in it. You can access it here: https://photo.adigupta.me
