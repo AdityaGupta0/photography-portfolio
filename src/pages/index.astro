@@ -1,17 +1,11 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
-import LandingHero from '../components/LandingHero-1.astro';
-import FeaturedGallery from '../components/FeaturedGallery.astro';
-import FeaturedWorkScroll from '../components/FeaturedWorkScroll.astro';
+import HeroSlideshow from '../components/HeroSlideshow.astro';
+import ServicesSection from '../components/ServicesSection.astro';
 ---
 
 <MainLayout>
-	<section class="relative min-h-screen items-center flex py-20 md:py-16 overflow-hidden">
-		<LandingHero />
-		<FeaturedWorkScroll />
-	</section>
+	<HeroSlideshow />
 
-	<section class="featured-section py-20">
-		<FeaturedGallery />
-	</section>
+	<ServicesSection />
 </MainLayout>

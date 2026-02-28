@@ -1,0 +1,126 @@
+---
+import { Image } from 'astro:assets';
+import { featuredCollectionId, getImages } from '../data/imageStore';
+
+const images = await getImages({ collection: featuredCollectionId });
+---
+
+<section class="relative w-full h-screen overflow-hidden">
+	<!-- Slideshow background images -->
+	<div id="hero-slideshow" class="absolute inset-0">
+		{
+			images.map((image, index) => (
+				<div
+					class:list={[
+						'hero-slide absolute inset-0 transition-opacity duration-1000 ease-in-out',
+						index === 0 ? 'opacity-100' : 'opacity-0',
+					]}
+					data-index={index}
+				>
+					<Image
+						src={image.src}
+						format="webp"
+						quality={80}
+						widths={[1200, 1920, 2560]}
+						sizes="100vw"
+						class="w-full h-full object-cover"
+						loading={index === 0 ? 'eager' : 'lazy'}
+						decoding="async"
+						fetchpriority={index === 0 ? 'high' : 'low'}
+						alt={image.description || image.title}
+					/>
+				</div>
+			))
+		}
+
+		<!-- Dark overlay for text readability -->
+		<div class="absolute inset-0 bg-black/40 dark:bg-black/60"></div>
+	</div>
+
+	<!-- Hero content -->
+	<div class="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
+		<h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight drop-shadow-lg">
+			Hi there, I'm Aditya
+		</h1>
+		<p class="mt-4 text-lg md:text-xl text-gray-200 drop-shadow-md">
+			And these are some of my photos.
+		</p>
+		<a
+			href="/collections"
+			class="mt-8 inline-block px-8 py-3 border-2 border-white text-white rounded-md
+				hover:bg-white hover:text-black transition-all duration-300
+				text-sm md:text-base font-medium
+				transform hover:scale-105 active:scale-95"
+		>
+			View Gallery
+		</a>
+	</div>
+
+	<!-- Slide indicators -->
+	<div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex space-x-2">
+		{
+			images.map((_, index) => (
+				<button
+					class:list={[
+						'hero-indicator w-2 h-2 rounded-full transition-all duration-300',
+						index === 0 ? 'bg-white w-6' : 'bg-white/50',
+					]}
+					data-slide={index}
+					aria-label={`Go to slide ${index + 1}`}
+				/>
+			))
+		}
+	</div>
+</section>
+
+<script>
+	function initSlideshow() {
+		const slides = document.querySelectorAll('.hero-slide');
+		const indicators = document.querySelectorAll('.hero-indicator');
+		if (slides.length <= 1) return;
+
+		let current = 0;
+		const total = slides.length;
+		const INTERVAL = 5000; // 5 seconds per slide
+		let timer: ReturnType<typeof setInterval>;
+
+		function goTo(index: number) {
+			slides[current].classList.remove('opacity-100');
+			slides[current].classList.add('opacity-0');
+			indicators[current].classList.remove('bg-white', 'w-6');
+			indicators[current].classList.add('bg-white/50');
+
+			current = index;
+
+			slides[current].classList.remove('opacity-0');
+			slides[current].classList.add('opacity-100');
+			indicators[current].classList.remove('bg-white/50');
+			indicators[current].classList.add('bg-white', 'w-6');
+		}
+
+		function next() {
+			goTo((current + 1) % total);
+		}
+
+		function startTimer() {
+			timer = setInterval(next, INTERVAL);
+		}
+
+		function resetTimer() {
+			clearInterval(timer);
+			startTimer();
+		}
+
+		// Indicator click handlers
+		indicators.forEach((btn, i) => {
+			btn.addEventListener('click', () => {
+				goTo(i);
+				resetTimer();
+			});
+		});
+
+		startTimer();
+	}
+
+	document.addEventListener('DOMContentLoaded', initSlideshow);
+</script>

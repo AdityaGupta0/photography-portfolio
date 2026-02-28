@@ -1,0 +1,97 @@
+---
+import { Image } from 'astro:assets';
+import { getImages } from '../data/imageStore';
+
+// Grab a few images from the gallery to use as placeholders
+const allImages = await getImages();
+const serviceImages = [
+	allImages[0],
+	allImages[Math.min(3, allImages.length - 1)],
+	allImages[Math.min(6, allImages.length - 1)],
+];
+
+interface Service {
+	title: string;
+	description: string;
+	imageIndex: number;
+	reverse: boolean;
+}
+
+const services: Service[] = [
+	{
+		title: 'Astroronomy & Nightsky',
+		description:
+			'Professional portrait sessions capturing your personality and essence. Whether for headshots, family portraits, or creative projects, every session is tailored to tell your unique story.',
+		imageIndex: 0,
+		reverse: false,
+	},
+	{
+		title: 'Landscape & Nature',
+		description:
+			'Breathtaking landscape and nature photography that captures the beauty of the natural world. From golden-hour vistas to intimate details in the wilderness, these images bring the outdoors to life.',
+		imageIndex: 1,
+		reverse: true,
+	},
+	{
+		title: 'Event & Portrait',
+		description:
+			'Comprehensive photography that preserves every meaningful moment. From graduations celebrations to studio sessions, your story is documented with an eye for candid emotion and detail. Contact me for more details.',
+		imageIndex: 2,
+		reverse: false,
+	},
+];
+---
+
+<section class="py-20 bg-gray-50 dark:bg-neutral-900">
+	<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+		<div class="text-center mb-16">
+			<h2 class="text-3xl md:text-4xl font-bold mb-4 dark:text-white">What I do</h2>
+			<p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+				capturing moments that inpsire awe
+			</p>
+		</div>
+
+		<div class="space-y-24">
+			{
+				services.map((service) => {
+					const img = serviceImages[service.imageIndex];
+					return (
+						<div
+							class:list={[
+								'flex flex-col gap-10 items-center',
+								service.reverse ? 'lg:flex-row-reverse' : 'lg:flex-row',
+							]}
+						>
+							{/* Image */}
+							<div class="w-full lg:w-1/2">
+								<div class="overflow-hidden rounded-lg shadow-lg">
+									<Image
+										src={img.src}
+										format="webp"
+										quality={80}
+										width={800}
+										height={Math.round((800 * img.src.height) / img.src.width)}
+										class="w-full h-80 lg:h-96 object-cover hover:scale-105 transition-transform duration-500"
+										loading="lazy"
+										decoding="async"
+										alt={service.title}
+									/>
+								</div>
+							</div>
+
+							{/* Text */}
+							<div class="w-full lg:w-1/2 flex flex-col justify-center">
+								<h3 class="text-2xl md:text-3xl font-bold mb-4 dark:text-white">
+									{service.title}
+								</h3>
+								<p class="text-gray-600 dark:text-gray-400 text-lg leading-relaxed">
+									{service.description}
+								</p>
+							</div>
+						</div>
+					);
+				})
+			}
+		</div>
+	</div>
+</section>

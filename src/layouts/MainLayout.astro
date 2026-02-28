@@ -23,6 +23,18 @@ const favicon = siteConfig.favicon;
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{owner}</title>
+
+		<!-- Inline dark-mode init to prevent FOUC -->
+		<script is:inline>
+			(function() {
+				const stored = localStorage.getItem('theme');
+				if (stored === 'dark' || (!stored && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+					document.documentElement.classList.add('dark');
+				} else {
+					document.documentElement.classList.remove('dark');
+				}
+			})();
+		</script>
 	</head>
 	<body>
 		<NavBar />

@@ -10,7 +10,7 @@
 		--background: #000000;
 
 		--bg: #ffffff;
-  		--bg-dark: #000000;
+		--bg-dark: #000000;
 
 		--foreground: 240 10% 3.9%;
 		--card: 0 0% 100%;
@@ -33,10 +33,31 @@
 		--radius: 0.5rem;
 	}
 
+	.dark {
+		--foreground: 0 0% 95%;
+		--card: 240 6% 10%;
+		--card-foreground: 0 0% 95%;
+		--popover: 240 6% 10%;
+		--popover-foreground: 0 0% 95%;
+		--primary: 0 0% 98%;
+		--primary-foreground: 240 5.9% 10%;
+		--secondary: 240 4% 16%;
+		--secondary-foreground: 0 0% 95%;
+		--muted: 240 4% 16%;
+		--muted-foreground: 240 5% 64.9%;
+		--accent: 240 4% 16%;
+		--accent-foreground: 0 0% 95%;
+		--destructive: 0 62.8% 30.6%;
+		--destructive-foreground: 0 0% 98%;
+		--border: 240 4% 20%;
+		--input: 240 4% 20%;
+		--ring: 240 5% 84%;
+	}
+
 	body {
-		background-color: light-dark(var(--bg), var(--bg-dark));
-		@apply text-foreground font-sans;
+		@apply bg-white dark:bg-neutral-950 text-gray-900 dark:text-gray-100 font-sans;
 		font-family: 'Inter', sans-serif;
+		transition: background-color 0.3s ease, color 0.3s ease;
 	}
 
 	h1,
@@ -59,11 +80,11 @@
 	}
 
 	.nav-link {
-		@apply relative text-base font-medium text-gray-800 transition-all duration-300 hover:text-black;
+		@apply relative text-base font-medium text-gray-800 dark:text-gray-200 transition-all duration-300 hover:text-black dark:hover:text-white;
 	}
 
 	.nav-link::after {
-		@apply content-[''] absolute w-0 h-[1px] bg-black bottom-[-2px] left-0 transition-all duration-300 ease-in-out;
+		@apply content-[''] absolute w-0 h-[1px] bg-black dark:bg-white bottom-[-2px] left-0 transition-all duration-300 ease-in-out;
 	}
 
 	.nav-link:hover::after {

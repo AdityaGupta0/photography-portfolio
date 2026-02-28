@@ -1,6 +1,6 @@
 ---
 
-import { Image } from 'astro:assets';
+import { Image, getImage } from 'astro:assets';
 import type { Image as ImageType } from '../data/galleryData';
 
 import "@fancyapps/ui/dist/fancybox/fancybox.css";
@@ -11,6 +11,14 @@ interface Props {
 }
 
 const { images } = Astro.props;
+
+// Pre-generate full-resolution WebP images for the Fancybox lightbox
+// These retain maximum quality so users see full detail in the viewer
+const fancyboxSrcs = await Promise.all(
+	images.map((image) =>
+		getImage({ src: image.src, format: 'webp', quality: 95 })
+	)
+);
 ---
 
 <section id="photo-grid" class="relative w-full mx-auto overflow-hidden">
@@ -20,11 +28,10 @@ const { images } = Astro.props;
 			const shutter = exif?.shutterSpeed ?? 1;
 			const shutterStr = shutter < 1 ? `1/${Math.round(1 / shutter)}` : `${shutter}`;
 			const altText = `ISO ${exif?.iso ?? '-'} ${exif?.focalLength ?? '-'}mm ƒ${exif?.fNumber ?? '-'} ${shutterStr}s`;
-			const thumbnailSrc = `${image.src.src}?w=800&h=600&fit=cover&format=webp`;
 
 			return (
 				<a
-					href={thumbnailSrc}
+					href={fancyboxSrcs[index].src}
 					class="photo-item absolute transition-transform hover:scale-[1.02] hover:z-10 group"
 					data-gallery="gallery1"
 					data-type="image"
@@ -39,9 +46,11 @@ const { images } = Astro.props;
 					<Image
 						src={image.src}
 						format="webp"
-						quality={92}
-						width={image.src.width}
-						height={image.src.height}
+						quality={80}
+						widths={[400, 800, 1200]}
+						sizes="(max-width: 640px) 400px, (max-width: 1024px) 800px, 1200px"
+						width={800}
+						height={Math.round((800 * image.src.height) / image.src.width)}
 						class="w-full h-full object-cover rounded-sm shadow-sm hover:shadow-lg transition-shadow duration-300 opacity-0 blur-sm will-change-filter will-change-opacity"
 						loading={index < 2 ? "eager" : "lazy"}
 						decoding="async"
